@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Tema2Ex2": {
+      "commandName": "Project",
+      "commandLineArgs": "Albina andrei Bec benzina Masina Elefant elicopter Zapada"
+    }
+  }
+}
