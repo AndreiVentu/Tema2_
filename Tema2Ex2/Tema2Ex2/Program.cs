@@ -1,8 +1,5 @@
 ﻿//Tema2 Ex2 LAB 3 Andrei Ventuneac
-//Am ales o varianta destul de greoaie din punct de veder al timpului si memorie de executie
 //Caut in funtie de prima litera a cuvantului daca este egala cu un index din tabela ASCII
-//In cazul in care se gaseste este adaugat in matrice 
-//Daca nu se intoduce textul "GOL"
 //Argumentele au fost introduse din proprietati->Debug
 
 using System;
