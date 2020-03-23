@@ -19,7 +19,7 @@ namespace Tema2Ex2
                 mat[i] = new string[50];
             }
 
-            int linie=0, coloana;
+            int linie=0, coloana,nr;
 
             if (args.Length == 0)
                 Console.Write("Linia de comanda nu contine argumente");
@@ -31,27 +31,32 @@ namespace Tema2Ex2
                 for (int i = 65; i <= 90; i++)
                 {
                     coloana = 0;
+                    nr = 0;
                     foreach (string param in args)
-                    { 
-                    
+                    {
+                        nr++;
                         if (param.ToUpper()[0] == i)
                         {
+                            //f(coloana==0)
+                                //mat[linie][coloana] = Convert.ToString(param[0])+": ";
+                            //else
+                            
                             mat[linie][coloana] = param;
                             coloana++;
+                            
                         }
-                        else
-                        {
-                            mat[linie][coloana] = "GOL";
-                        }
+                        if (nr == args.Length && coloana>0)
+                            linie++;
 
                     }
-                    linie++;
+                                      
                     //Console.WriteLine(param[0]);
                 }
 
                 for(int i=0; i<linie; i++)
                 {
-                    for(int j = 0;j<mat[i].Length;j++)
+                    Console.Write(mat[i][0].Substring(0, 1)+": ");
+                    for (int j = 0;j<mat[i].Length;j++)
                     {
                         Console.Write("{0} ", mat[i][j]);
                     }
