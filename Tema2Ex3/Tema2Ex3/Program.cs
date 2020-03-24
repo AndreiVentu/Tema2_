@@ -1,7 +1,11 @@
 ﻿using LibrarieEntitati;
 using System;
 
-
+//EvidentaStudenti2
+//Am realizat un tablou bidimensional de 4 pe 15
+//Iar la afisare am luat chiar acest caz general de 4 pe 15
+//Tabloul fiind global are valorile initializare cu 0 deci unde nu sunt introduse note ale disciplinelor vom avea valoarea 0
+//
 namespace ManagementStudenti
 {
     class Program
