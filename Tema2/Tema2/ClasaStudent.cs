@@ -1,18 +1,22 @@
-﻿//Tema2 Lab3 ----- Ex. 1
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Teema1
 {
-    class Class1
+    class Student
     {
-        double nota;
-        string nume, prenume;
-        string status;
+        const int MINIM = 5;
+        const string GOOD = "admis";
+        const string BAD = "respins";
 
-        public Class1()
+        public string nume { get; set; }
+        public string prenume { get; set; }
+        public double nota { get; set; }
+        public string status { get; set; }
+
+
+        public Student()
         {
             nota = 0;
             nume = string.Empty;
@@ -20,32 +24,14 @@ namespace Teema1
             status = string.Empty;
         }
 
-
-        public Class1(string nume_, string prenume_, double nota_)
+        public Student(string nume_, string prenume_, double nota_)
         {
             nota = nota_;
             nume = nume_;
             prenume = prenume_;
         }
 
-        //adaugare constructor nou ce primeste un sir de caractere - lab3
-        public Class1(string text)
-        {
-            int k = 0;
-            string[] cuvinte = text.Split(", ");
-            foreach(string cuv in cuvinte)
-            {
-                if (k == 0)
-                    nume = cuv;
-                if (k == 1)
-                    prenume = cuv;
-                if (k == 2)
-                    nota = Convert.ToDouble(cuv);
-                k++;
-            }
-        }
-        //
-        public string afisare()
+        public string afisarePromovabilitate()
         {
             if (nota >= 5)
                 return string.Format("Elevul {0} {1} are nota {2} si este admis", nume, prenume, nota);
@@ -61,6 +47,29 @@ namespace Teema1
                 return string.Empty;
         }
 
+        public string afisareadmis()
+        {
+            if (nota >= 5)
+                return string.Format("{0} {1} : nota {2}", nume, prenume, nota);
+            else
+                return string.Empty;
+        }
+
+        public Student(string text)
+        {
+            int k = 0;
+            string[] cuvinte = text.Split(", ");
+            foreach (string cuv in cuvinte)
+            {
+                if (k == 0)
+                    nume = cuv;
+                if (k == 1)
+                    prenume = cuv;
+                if (k == 2)
+                    nota = Convert.ToDouble(cuv);
+                k++;
+            }
+        }
         public string getnumepr()
         {
             return string.Format("{0} {1}", nume, prenume);
@@ -77,17 +86,16 @@ namespace Teema1
 
         public void setstatus(double nota)
         {
-            if (nota >= 5)
-                status = "admis";
+            if (nota >= MINIM)
+                status = GOOD;
             else
-                status = "respins";
+                status = BAD;
         }
 
         public string getstatus()
         {
             return status;
         }
-
 
     }
 }
